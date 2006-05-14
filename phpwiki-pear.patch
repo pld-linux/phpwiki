@@ -1,0 +1,54 @@
+--- phpwiki-1.3.12p2/lib/main.php~	2006-02-19 18:17:05.000000000 +0200
++++ phpwiki-1.3.12p2/lib/main.php	2006-05-15 00:26:55.653213042 +0300
+@@ -53,8 +53,7 @@
+          // first mysql request costs [958ms]! [670ms] is mysql_connect()
+         
+         if (in_array('File', $this->_dbi->getAuthParam('USER_AUTH_ORDER'))) {
+-            // force our local copy, until the pear version is fixed.
+-            include_once(dirname(__FILE__)."/pear/File_Passwd.php");
++            include_once "File/Passwd.php";
+         }
+         if (ENABLE_USER_NEW) {
+             // Preload all necessary userclasses. Otherwise session => __PHP_Incomplete_Class_Name
+--- phpwiki-1.3.12p2/lib/WikiGroup.php~	2005-02-12 19:08:18.000000000 +0200
++++ phpwiki-1.3.12p2/lib/WikiGroup.php	2006-05-15 00:27:30.573997885 +0300
+@@ -843,7 +843,7 @@
+                           E_USER_WARNING);
+             return false;
+         }
+-        require_once('lib/pear/File_Passwd.php');
++        require_once 'File/Passwd.php';
+         $this->_file = new File_Passwd(AUTH_GROUP_FILE,false,AUTH_GROUP_FILE.".lock");
+     }
+ 
+--- phpwiki-1.3.12p2/lib/FileFinder.php~	2005-02-28 23:24:32.000000000 +0200
++++ phpwiki-1.3.12p2/lib/FileFinder.php	2006-05-15 00:28:50.325790388 +0300
+@@ -366,16 +366,7 @@
+     function PearFileFinder ($path = array()) {
+         $this->FileFinder(array_merge(
+                           $path,
+-                          array('/usr/share/php4',
+-                                '/usr/share/php',
+-                                '/usr/lib/php4',
+-                                '/usr/lib/php',
+-                                '/usr/local/share/php4',
+-                                '/usr/local/share/php',
+-                                '/usr/local/lib/php4',
+-                                '/usr/local/lib/php',
+-                                '/System/Library/PHP',
+-                                '/Apache/pear'        // Windows
++                          array('/usr/share/pear',
+                                 )));
+     }
+ }
+--- phpwiki-1.3.12p2/lib/WikiUser/File.php~	2006-03-07 20:09:53.000000000 +0200
++++ phpwiki-1.3.12p2/lib/WikiUser/File.php	2006-05-15 00:30:06.557506089 +0300
+@@ -29,7 +29,7 @@
+         if (empty($file) and defined('AUTH_USER_FILE'))
+             $file = AUTH_USER_FILE;
+         // same style as in main.php
+-        include_once(dirname(__FILE__)."/../pear/File_Passwd.php"); 
++        include_once "File/Passwd.php"; 
+         // "__PHP_Incomplete_Class"
+         if (!empty($file) or empty($this->_file) or !isa($this->_file, "File_Passwd"))
+             $this->_file = new File_Passwd($file, false, $file.'.lock');
