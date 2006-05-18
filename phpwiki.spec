@@ -1,4 +1,5 @@
 Summary:	PHP-based Wiki webapplication
+Summary(pl):	Oparta na PHP aplikacja WWW Wiki
 Name:		phpwiki
 Version:	1.3.12p2
 Release:	0.5
@@ -30,7 +31,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 PhpWiki is a WikiWikiWeb clone in PHP. A WikiWikiWeb is a site where
 anyone can edit the pages through an HTML form. Multiple storage
 backends, dynamic hyperlinking, themeable, scriptable by plugins, full
-authentication, ACL's.
+authentication, ACLs.
+
+%description -l pl
+PhpWiki to klon WikiWikiWeb napisany w PHP. WikiWikiWeb to serwis, w
+którym ktokolwiek mo¿e zmieniaæ strony poprzez formularz HTML.
+Dostêpne jest wiele backendów do przechowywania danych, dynamiczne
+odno¶niki, motywy, oskryptowanie poprzez wtyczki, pe³ne
+uwierzytelnienie, listy kontroli dostêpu (ACL).
 
 %prep
 %setup -q
@@ -58,6 +66,9 @@ cp -a config/* $RPM_BUILD_ROOT%{_sysconfdir}
 install apache.conf $RPM_BUILD_ROOT%{_sysconfdir}/apache.conf
 install apache.conf $RPM_BUILD_ROOT%{_sysconfdir}/httpd.conf
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %triggerin -- apache1
 %webapp_register apache %{_webapp}
 
@@ -69,9 +80,6 @@ install apache.conf $RPM_BUILD_ROOT%{_sysconfdir}/httpd.conf
 
 %triggerun -- apache < 2.2.0, apache-base
 %webapp_unregister httpd %{_webapp}
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
