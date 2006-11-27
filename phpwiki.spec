@@ -11,14 +11,14 @@ Patch0:		%{name}-pear.patch
 Patch1:		%{name}-webapps.patch
 URL:		http://phpwiki.sourceforge.net/
 BuildRequires:	rpmbuild(macros) >= 1.268
-Requires:	php >= 3:4.0.6
-Requires:	php-pcre
+Requires:	php(pcre)
 Requires:	php-pear-Cache
 Requires:	php-pear-DB
 Requires:	php-pear-DB_Pager
 Requires:	php-pear-File_Passwd
 Requires:	php-pear-PEAR-core
 Requires:	webapps
+Requires:	webserver(php) >= 4.0.6
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
