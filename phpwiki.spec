@@ -1,5 +1,5 @@
 Summary:	PHP-based Wiki webapplication
-Summary(pl):	Oparta na PHP aplikacja WWW Wiki
+Summary(pl.UTF-8):   Oparta na PHP aplikacja WWW Wiki
 Name:		phpwiki
 Version:	1.3.12p2
 Release:	0.5
@@ -33,12 +33,12 @@ anyone can edit the pages through an HTML form. Multiple storage
 backends, dynamic hyperlinking, themeable, scriptable by plugins, full
 authentication, ACLs.
 
-%description -l pl
+%description -l pl.UTF-8
 PhpWiki to klon WikiWikiWeb napisany w PHP. WikiWikiWeb to serwis, w
-którym ktokolwiek mo¿e zmieniaæ strony poprzez formularz HTML.
-Dostêpne jest wiele backendów do przechowywania danych, dynamiczne
-odno¶niki, motywy, oskryptowanie poprzez wtyczki, pe³ne
-uwierzytelnienie, listy kontroli dostêpu (ACL).
+ktÃ³rym ktokolwiek moÅ¼e zmieniaÄ‡ strony poprzez formularz HTML.
+DostÄ™pne jest wiele backendÃ³w do przechowywania danych, dynamiczne
+odnoÅ›niki, motywy, oskryptowanie poprzez wtyczki, peÅ‚ne
+uwierzytelnienie, listy kontroli dostÄ™pu (ACL).
 
 %prep
 %setup -q
