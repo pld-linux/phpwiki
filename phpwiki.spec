@@ -1,5 +1,5 @@
 Summary:	PHP-based Wiki webapplication
-Summary(pl.UTF-8):   Oparta na PHP aplikacja WWW Wiki
+Summary(pl.UTF-8):	Oparta na PHP aplikacja WWW Wiki
 Name:		phpwiki
 Version:	1.3.12p2
 Release:	0.5
