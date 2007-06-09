@@ -51,7 +51,7 @@ rm -rf lib/pear
 
 cat > apache.conf <<EOF
 Alias /%{_webapp} %{_appdir}
-<Directory /%{_appdir}>
+<Directory %{_appdir}/>
 	Allow from all
 </Directory>
 EOF
