@@ -50,8 +50,8 @@ rm -rf lib/pear
 %patch1 -p1
 
 cat > apache.conf <<EOF
-Alias /%{name} %{_appdir}
-<Directory /%{name}>
+Alias /%{_webapp} %{_appdir}
+<Directory /%{_appdir}>
 	Allow from all
 </Directory>
 EOF
