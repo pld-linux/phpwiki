@@ -2,7 +2,7 @@ Summary:	PHP-based Wiki webapplication
 Summary(pl.UTF-8):	Oparta na PHP aplikacja WWW Wiki
 Name:		phpwiki
 Version:	1.3.12p2
-Release:	0.5
+Release:	0.6
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://dl.sourceforge.net/phpwiki/%{name}-%{version}.tar.gz
@@ -12,6 +12,7 @@ Patch1:		%{name}-webapps.patch
 URL:		http://phpwiki.sourceforge.net/
 BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	php(pcre)
+Requires:	php(session)
 Requires:	php-pear-Cache
 Requires:	php-pear-DB
 Requires:	php-pear-DB_Pager
