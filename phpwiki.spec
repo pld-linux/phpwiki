@@ -47,8 +47,8 @@ mv config/config{-dist,}.ini
 mv config/phpwiki.spec .
 mv config/make-dbhelper.pl .
 rm -rf lib/pear
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 cat > apache.conf <<EOF
 Alias /%{_webapp} %{_appdir}
